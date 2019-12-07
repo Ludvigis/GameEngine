@@ -15,9 +15,12 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
 
 set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT sandbox)
+set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
+set(GLFW_BUILD_TESTS OFF CACHE BOOL "" FORCE)
+set(GLFW_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
 
 message ("cxx Flags:" ${CMAKE_CXX_FLAGS})
 
 add_subdirectory(sandbox)
-#add_subdirectory (math)
-
+add_subdirectory(engine)
+add_subdirectory(thirdparty/glfw)
