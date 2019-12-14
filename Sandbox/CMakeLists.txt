@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.13)
 
 set(
     source_list
-	"src/Sandbox.cpp"
+    "src/Sandbox.cpp"
 )
 
 

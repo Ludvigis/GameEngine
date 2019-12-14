@@ -1,5 +1,5 @@
 #include "Window.h"
-#include <iostream>
+#include "Log.h"
 
 namespace Engine {
 
@@ -8,9 +8,10 @@ namespace Engine {
 	{
 		int initSuccess = glfwInit();
 
-		if(initSuccess != 1)
-			std::cerr << "Failed to initialize GLFW" << std::endl;
-	
+		if (initSuccess != 1) {
+			LOG_ERROR("Failed to initialize GLFW");
+		}
+			
 		windowHandle = glfwCreateWindow(width, height, title.c_str(), NULL, NULL);
 		glfwMakeContextCurrent(windowHandle);
 
