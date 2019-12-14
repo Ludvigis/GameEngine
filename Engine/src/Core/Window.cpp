@@ -12,8 +12,9 @@ namespace Engine {
 			LOG_ERROR("Failed to initialize GLFW");
 		}
 			
+		glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);	//API behövs bara för OpenGL
 		windowHandle = glfwCreateWindow(width, height, title.c_str(), NULL, NULL);
-		glfwMakeContextCurrent(windowHandle);
+
 
 	}
 
@@ -24,8 +25,13 @@ namespace Engine {
 
 	void Window::onUpdate()
 	{
+		
 		glfwPollEvents();
 		glfwSwapBuffers(windowHandle);
+	}
+
+	bool Window::windowShouldClose() {
+		return glfwWindowShouldClose(windowHandle);
 	}
 
 }
